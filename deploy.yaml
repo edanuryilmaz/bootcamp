@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proje-deployment
+  labels:
+    app: proje
+spec:
+  replicas:
+  selector:
+    matchLabels:
+      app: proje
+  template:
+    metadata:
+      labels:
+        app: proje
+spec:
+  containers:
+  - name: proje
+    image: /home/yaml
+    imagePullPolicy: Never
+    ports:
+    - containerPort :8080
